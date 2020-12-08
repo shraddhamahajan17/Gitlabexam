@@ -1,0 +1,24 @@
+<div>
+<table border='2'>
+        <tr><th>customer id</th><th>customer name</th><th>aadhar no</th><th>age</th><th>about</th></tr>
+        <tr *ngFor="let ob of carr">
+             <td>{{ob.cid}}</td>
+            <td>{{ob.cname}}</td>
+            <td>{{ob.aadhar}}</td>
+            <td>{{ob.age}}</td>
+            <td>{{ob.cname|testpipe:ob.age}}</td>
+            <td><a (click)="updateCustomer(ob)">view</a></td>
+            <td><a (click)="deleteCustomer(ob)">delete</a></td>
+            <td>{{ob.cname|slice:'0':'3'}}</td>
+            <td>{{ob.cname|uppercase}}</td>
+         </tr>
+
+    </table>
+
+    <button type="button" name="btn" (click)="displayForm()">Add Customer</button>
+
+<div *ngIf="flag">
+<cform [upcust]="cust" (myevent)="flag=$event"></cform>
+</div>
+</div>
+  
